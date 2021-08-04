@@ -1,0 +1,14 @@
+{
+  "name": "lib",
+  "version": "0.1.0",
+  "dependencies": {
+    "@types/qs": "^6.9.7",
+    "@types/ramda": "^0.27.44",
+    "@types/sprintf-js": "^1.1.2",
+    "axios": "^0.21.1",
+    "loglevel": "^1.7.1",
+    "qs": "^6.10.1",
+    "ramda": "^0.27.1",
+    "sprintf-js": "^1.1.2"
+  }
+}
