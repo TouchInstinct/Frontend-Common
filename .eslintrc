@@ -1,0 +1,104 @@
+{
+  "extends": [
+    "plugin:jsx-control-statements/recommended"
+  ],
+  "globals": {
+    "document": true,
+    "window": true
+  },
+  "rules": {
+    "semi": ["error", "never"],
+    "curly": ["error", "all"],
+    "object-curly-spacing": ["error", "always"],
+    "no-trailing-spaces": "error",
+    "max-len": ["error", 120],
+    "indent": ["error", 2],
+    "eol-last": "error",
+    "prefer-const": "error",
+    "no-shadow": "warn",
+    "no-console": "error",
+    "no-else-return": "warn",
+    "comma-dangle": ["error", "always-multiline"],
+    "lines-between-class-members": ["error", "always"],
+    "padding-line-between-statements": ["error",
+      {
+        "blankLine": "always",
+        "prev": ["let", "const"],
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": ["singleline-let", "singleline-const"],
+        "next": ["singleline-let", "singleline-const"]
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": [
+          "if",
+          "block",
+          "return",
+          "multiline-block-like",
+          "multiline-expression"
+        ]
+      },
+      {
+        "blankLine": "always",
+        "prev": [
+          "block-like",
+          "multiline-block-like",
+          "multiline-expression"
+        ],
+        "next": "*"
+      }
+    ],
+    "quotes": ["error", "single"],
+    "jsx-quotes": ["error", "prefer-double"],
+    "react/jsx-no-undef": [2, { "allowGlobals": true }],
+    "react/function-component-definition": [2, {
+      "namedComponents": "arrow-function",
+      "unnamedComponents": "arrow-function"
+    }],
+    "react/no-redundant-should-component-update": "warn",
+    "react/no-unused-state": "error",
+    "react/self-closing-comp": ["error", {
+      "html": true,
+      "component": true
+    }],
+    "react/sort-comp": ["error", {
+      "order": [
+        "static-methods",
+        "lifecycle",
+        "everything-else",
+        "/^handle.+$/",
+        "rendering"
+      ],
+      "groups": {
+        "rendering": [
+          "'/^render.+$/'",
+          "render"
+        ]
+      }
+    }],
+    "react/jsx-closing-bracket-location": ["error", "tag-aligned"],
+    "react/jsx-closing-tag-location": "error",
+    "react/jsx-equals-spacing": ["error", "never"],
+    "react/jsx-first-prop-new-line": ["error", "multiline"],
+    "react/jsx-fragments": ["error", "element"],
+    "react/jsx-handler-names": ["error", {
+      "eventHandlerPrefix": "handle",
+      "eventHandlerPropPrefix": "on"
+    }],
+    "react/jsx-max-props-per-line": ["error", {
+      "maximum": 2
+    }],
+    "react/jsx-tag-spacing": ["error", {
+      "beforeSelfClosing": "always"
+    }],
+    "react/jsx-sort-props": ["warn", {
+      "shorthandFirst": true,
+      "callbacksLast": true,
+      "noSortAlphabetically": true
+    }]
+  }
+}
