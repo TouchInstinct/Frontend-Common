@@ -6,8 +6,10 @@
     "@types/sprintf-js": "^1.1.2",
     "axios": "^0.21.1",
     "loglevel": "^1.7.1",
+    "modern-css-reset": "^1.4.0",
     "qs": "^6.10.1",
     "ramda": "^0.27.1",
+    "sass-rem": "^3.0.0",
     "sprintf-js": "^1.1.2"
   }
 }
