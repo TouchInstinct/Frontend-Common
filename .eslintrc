@@ -25,6 +25,11 @@
         "next": "*"
       },
       {
+        "blankLine": "always",
+        "prev": "*",
+        "next": ["let", "const"]
+      },
+      {
         "blankLine": "any",
         "prev": ["singleline-let", "singleline-const"],
         "next": ["singleline-let", "singleline-const"]
