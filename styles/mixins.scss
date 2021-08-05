@@ -1,0 +1,79 @@
+@use "breakpoints";
+
+@mixin mobile-narrow {
+    @media screen and (max-width: breakpoints.$mobile-wide-min - 1) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: breakpoints.$tablet-min - 1) {
+        @content;
+    }
+}
+
+@mixin tablet-narrow {
+    @media screen and (min-width: breakpoints.$tablet-min) and (max-width: breakpoints.$tablet-wide-min - 1) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: breakpoints.$tablet-min) and (max-width: breakpoints.$desktop-min - 1) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: breakpoints.$desktop-min) {
+        @content;
+    }
+}
+
+@mixin no-desktop {
+    @media screen and (max-width: breakpoints.$desktop-min - 1) {
+        @content;
+    }
+}
+
+@mixin no-mobile {
+    @media screen and (min-width: breakpoints.$tablet-min) {
+        @content;
+    }
+}
+
+@mixin retina {
+    @media (min-device-pixel-ratio: 1.5), (min-resolution: 192dpi) {
+        @content;
+    }
+}
+
+@mixin webp-fallback {
+    :global(.no-webp) {
+        @content;
+    }
+}
+
+@mixin hover {
+    @media(hover: hover) and (pointer: fine) {
+        &:hover {
+            @content;
+        }
+    }
+
+    @media (hover: hover), (-ms-high-contrast:none) {
+        &:hover {
+            @content;
+        }
+    }
+
+    &:active {
+        @content;
+    }
+}
+
+@mixin ie11-fallback {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        @content;
+    }
+}
