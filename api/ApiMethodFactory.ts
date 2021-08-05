@@ -7,7 +7,7 @@ import HttpMethod from './HttpMethod'
 class ApiMethodFactory {
   private readonly apiPrefix: string
 
-  constructor(apiPrefix: string) {
+  constructor({ apiPrefix }: { apiPrefix: string }) {
     this.apiPrefix = apiPrefix
   }
 
