@@ -57,7 +57,7 @@ class ApiMethodFactory {
     return `${path}?${query}`
   }
 
-  make = <R, T = null>(
+  make = <R = any, T = any>(
     template: string,
     method: HttpMethod = HttpMethod.GET, {
       path: pathKeys = [],
