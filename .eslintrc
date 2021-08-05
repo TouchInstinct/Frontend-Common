@@ -15,11 +15,9 @@
     "indent": ["error", 2],
     "eol-last": "error",
     "prefer-const": "error",
-    "no-shadow": "warn",
     "no-console": "error",
     "no-else-return": "warn",
     "comma-dangle": ["error", "always-multiline"],
-    "lines-between-class-members": ["error", "always"],
     "padding-line-between-statements": ["error",
       {
         "blankLine": "always",
@@ -99,6 +97,24 @@
       "shorthandFirst": true,
       "callbacksLast": true,
       "noSortAlphabetically": true
-    }]
-  }
+    }],
+    "jsx-control-statements/jsx-jcs-no-undef": "off"
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.ts?(x)"
+      ],
+      "rules": {
+        "indent": "off",
+        "@typescript-eslint/no-shadow": "warn",
+        "@typescript-eslint/indent": ["error", 2],
+        "@typescript-eslint/space-before-function-paren": ["error", {
+          "named": "never",
+          "anonymous": "always",
+          "asyncArrow": "always"
+        }]
+      }
+    }
+  ]
 }
