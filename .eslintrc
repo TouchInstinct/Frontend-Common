@@ -114,6 +114,10 @@
         "indent": "off",
         "@typescript-eslint/no-shadow": "warn",
         "@typescript-eslint/indent": ["error", 2],
+        "@typescript-eslint/type-annotation-spacing": ["error", {
+            before: false,
+            after: true
+        }],
         "@typescript-eslint/space-before-function-paren": ["error", {
           "named": "never",
           "anonymous": "always",
