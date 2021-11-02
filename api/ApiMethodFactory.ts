@@ -71,7 +71,6 @@ class ApiMethodFactory {
         R.omit(R.concat(pathKeys, queryKeys)),
       ),
       R.when(R.isEmpty, R.always(null)),
-      R.unless(R.isNil, JSON.stringify),
     )
 
     const body = getBody(data)
