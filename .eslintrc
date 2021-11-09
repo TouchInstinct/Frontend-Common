@@ -113,6 +113,7 @@
       "rules": {
         "indent": "off",
         "space-infix-ops": "off",
+        "@typescript-eslint/space-infix-ops": ["error"],
         "@typescript-eslint/no-shadow": "warn",
         "@typescript-eslint/indent": ["error", 2],
         "@typescript-eslint/type-annotation-spacing": ["error"],
