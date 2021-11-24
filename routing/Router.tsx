@@ -46,7 +46,7 @@ const renderRouteConfig = (
       children.push(route)
     } else if (item.component && item.childRoutes) {
       console.log(item.name)
-      const routeConfig = //renderRouteConfig(item.component, item.childRoutes, newContextPath)
+      const routeConfig = renderRouteConfig(item.component, item.childRoutes, newContextPath)
       // (
       //   <Route
       //     path={newContextPath}
