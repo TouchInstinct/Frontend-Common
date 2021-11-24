@@ -19,6 +19,7 @@ const renderRouteConfig = (
 ): JSX.Element => {
   // Resolve route config object in React Router v3.
   const children: React.ReactNode[] = []
+  console.log("start")
 
   const renderRoute = (item: RouteDefinition, routeContextPath: string) => {
     let newContextPath: string
@@ -28,8 +29,9 @@ const renderRouteConfig = (
     } else {
       newContextPath = `${routeContextPath}/${item.path}`
     }
-
+    //newContextPath = `${routeContextPath}/${item.path}`
     newContextPath = newContextPath.replace(/\/+/g, '/')
+    console.log(newContextPath, item.name)
 
     if (item.redirect) {
       const route = (
@@ -43,7 +45,15 @@ const renderRouteConfig = (
 
       children.push(route)
     } else if (item.component && item.childRoutes) {
-      const routeConfig = renderRouteConfig(item.component, item.childRoutes, newContextPath)
+      console.log(item.name)
+      const routeConfig = //renderRouteConfig(item.component, item.childRoutes, newContextPath)
+      // (
+      //   <Route
+      //     path={newContextPath}
+      //     >
+      //     {renderRouteConfig(item.component, item.childRoutes, newContextPath)}
+      //   </Route>
+      // )
 
       children.push(routeConfig)
     } else if (item.component) {
@@ -56,7 +66,7 @@ const renderRouteConfig = (
   }
 
   routes.forEach(item => renderRoute(item, contextPath))
-
+  console.log("end", children.length)
   // Use Switch as the default container by default
   if (!Container) {
     return (
@@ -65,15 +75,13 @@ const renderRouteConfig = (
       </Switch>
     )
   }
-
+  console.log("mega end")
   return (
-    <BrowserRouter>
-      <Container key={contextPath}>
-        <Switch>
-          {children as JSX.TChildren[]}
-        </Switch>
-      </Container>
-    </BrowserRouter>
+    <Container key={contextPath}>
+      <Switch>
+        {children as JSX.TChildren[]}
+      </Switch>
+    </Container>
   )
 }
 
@@ -87,8 +95,15 @@ const Router: React.FC<Props> = (props: Props) => {
   const { routeConfig, component, baseUrlPath } = props
 
   const preparedRoutes = prepareRoutes(routeConfig)
+  console.log(preparedRoutes)
+  //console.log("React",renderRouteConfig(component, preparedRoutes, baseUrlPath))
 
-  return renderRouteConfig(component, preparedRoutes, baseUrlPath)
+  return (
+    <BrowserRouter>
+      {renderRouteConfig(component, preparedRoutes, baseUrlPath)}
+    </BrowserRouter>
+  )
+  //renderRouteConfig(component, preparedRoutes, baseUrlPath)
 }
 
 export default Router
