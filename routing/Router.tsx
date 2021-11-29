@@ -67,13 +67,11 @@ const renderRouteConfig = (
   }
 
   return (
-    <BrowserRouter>
-      <Container key={contextPath}>
-        <Switch>
-          {children as JSX.TChildren[]}
-        </Switch>
-      </Container>
-    </BrowserRouter>
+    <Container key={contextPath}>
+      <Switch>
+        {children as JSX.TChildren[]}
+      </Switch>
+    </Container>
   )
 }
 
@@ -88,7 +86,11 @@ const Router: React.FC<Props> = (props: Props) => {
 
   const preparedRoutes = prepareRoutes(routeConfig)
 
-  return renderRouteConfig(component, preparedRoutes, baseUrlPath)
+  return (
+    <BrowserRouter>
+      {renderRouteConfig(component, preparedRoutes, baseUrlPath)}
+    </BrowserRouter>
+  )
 }
 
 export default Router
