@@ -86,7 +86,7 @@
     "react/jsx-closing-bracket-location": ["error", "tag-aligned"],
     "react/jsx-closing-tag-location": "error",
     "react/jsx-equals-spacing": ["error", "never"],
-    "react/jsx-first-prop-new-line": ["error", "multiline"],
+    "react/jsx-first-prop-new-line": 0,
     "react/jsx-fragments": ["error", "element"],
     "react/jsx-handler-names": ["error", {
       "eventHandlerPrefix": "handle",
