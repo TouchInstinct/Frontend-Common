@@ -28,28 +28,28 @@ class FormStore {
   }
 
   @action
-  setSubmitted(isSubmitted: boolean) {
-    this.submitted = isSubmitted
+  setSubmitted(submitted: boolean) {
+    this.submitted = submitted
   }
 
   @action
-  setTouched(isTouched: boolean) {
-    this.touched = isTouched
+  setTouched(touched: boolean) {
+    this.touched = touched
   }
 
   @action
-  setSubmitting(isSubmitting: boolean) {
-    this.submitting = isSubmitting
+  setSubmitting(submitting: boolean) {
+    this.submitting = submitting
   }
 
   @action
-  setValid(isValid: boolean) {
-    this.valid = isValid
+  setValid(valid: boolean) {
+    this.valid = valid
   }
 
   @action
-  setLoading(isLoading = true) {
-    this.loading = isLoading
+  setLoading(loading = true) {
+    this.loading = loading
   }
 
   async handleSubmit(fn: () => void) {
