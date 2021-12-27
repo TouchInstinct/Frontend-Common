@@ -3,6 +3,7 @@ import * as R from 'ramda'
 import { sprintf } from 'sprintf-js'
 import request from './request'
 import HttpMethod from './HttpMethod'
+import HeadersType from './TypeHeader'
 
 class ApiMethodFactory {
   private readonly apiPrefix: string
@@ -63,7 +64,7 @@ class ApiMethodFactory {
       path: pathKeys = [],
       query: queryKeys = [],
     }: { path?: string[], query?: string[] } = {},
-  ) => async (data: Nullable<T> = null): Promise<R> => {
+  ) => async (data: Nullable<T> = null, headers: HeadersType = {}): Promise<R> => {
     const getBody = R.pipe(
       R.ifElse(
         R.isNil,
@@ -80,6 +81,7 @@ class ApiMethodFactory {
       method: method,
       url: endpoint,
       data: body,
+      headers: headers,
     })
   }
 }

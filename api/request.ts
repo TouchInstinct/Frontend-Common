@@ -7,6 +7,8 @@ const retrieve = async (
   hasRetriedAfterAuthentication = false,
 ): Promise<any> => {
   try {
+    console.log(props);
+    
     const { data } = await axios(props)
 
     return data
