@@ -4,8 +4,7 @@ interface HeadersType {
 }
 
 export enum ContentType {
-  // MULTIPART = 'multipart/form-data; boundary=boundary',
-  MULTIPART = 'multipart/form-data',
+  MULTIPART = 'multipart/form-data; boundary=boundary',
   JSON = 'application/json',
 }
 

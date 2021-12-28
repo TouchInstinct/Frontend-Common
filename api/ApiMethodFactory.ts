@@ -65,14 +65,16 @@ class ApiMethodFactory {
       query: queryKeys = [],
     }: { path?: string[], query?: string[] } = {},
   ) => async (data: Nullable<T> = null, headers: HeadersType = {}): Promise<R> => {
-    const getBody = R.pipe(
-      R.ifElse(
-        R.isNil,
-        R.always(null),
+    const getBody = (body: Nullable<T>) => {
+      if (R.isNil(body) || body instanceof FormData) {
+        return body
+      }
+
+      return R.pipe(
         R.omit(R.concat(pathKeys, queryKeys)),
-      ),
-      R.when(R.isEmpty, R.always(null)),
-    )
+        R.when(R.isEmpty, R.always(null)),
+      )(body)
+    }
 
     const body = getBody(data)
     const endpoint = this.makeEndpoint(template, data, pathKeys, queryKeys)
