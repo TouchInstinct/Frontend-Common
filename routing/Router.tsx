@@ -61,7 +61,7 @@ const renderRouteConfig = (
   if (!Container) {
     return (
       <Switch>
-        {children as JSX.TChildren[]}
+        {children}
       </Switch>
     )
   }
@@ -69,7 +69,7 @@ const renderRouteConfig = (
   return (
     <Container key={contextPath}>
       <Switch>
-        {children as JSX.TChildren[]}
+        {children}
       </Switch>
     </Container>
   )
