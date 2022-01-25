@@ -63,17 +63,28 @@ class ApiMethodFactory {
     method: HttpMethod = HttpMethod.GET, {
       path: pathKeys = [],
       query: queryKeys = [],
-    }: { path?: string[], query?: string[] } = {},
+      isFormData = false,
+    }: { path?: string[], query?: string[], isFormData?: boolean } = {},
   ) => async (data: Nullable<T> = null, headers: HeadersType = {}): Promise<R> => {
     const getBody = (body: Nullable<T>) => {
       if (R.isNil(body) || body instanceof FormData) {
         return body
       }
 
-      return R.pipe(
+      const preResult = R.pipe(
         R.omit(R.concat(pathKeys, queryKeys)),
         R.when(R.isEmpty, R.always(null)),
       )(body)
+
+      if (isFormData) {
+        const formData = new FormData()
+
+        R.forEachObjIndexed<any>((value, key) => formData.append(key as string, value), body)
+
+        return formData
+      }
+
+      return preResult
     }
 
     const body = getBody(data)
