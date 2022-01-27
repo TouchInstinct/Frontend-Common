@@ -10,7 +10,10 @@ interface Route {
   icon?: React.ComponentType
   childRoutes?: Route[]
   component?: React.ComponentType
-  getUrl?: (params: Record<string, unknown>) => string
+}
+
+export interface ParametrizedRoute extends Route {
+  getUrl: (params: Record<string, unknown>) => string
 }
 
 export default Route
