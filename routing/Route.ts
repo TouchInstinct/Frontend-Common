@@ -10,6 +10,7 @@ interface Route {
   icon?: React.ComponentType
   childRoutes?: Route[]
   component?: React.ComponentType
+  getUrl?: (params: any) => string
 }
 
 export default Route
