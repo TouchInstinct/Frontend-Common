@@ -1,6 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios'
 
 import logger from 'lib/logger'
+import { ApiError } from './error'
 
 const retrieve = async (
   props: AxiosRequestConfig,
@@ -15,7 +16,7 @@ const retrieve = async (
       return retrieve(props, true)
     }
 
-    throw new Error(err)
+    throw new ApiError(err)
   }
 }
 
