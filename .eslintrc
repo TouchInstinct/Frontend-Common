@@ -1,7 +1,15 @@
 {
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "react"],
   "extends": [
     "plugin:jsx-control-statements/recommended"
   ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "globals": {
     "document": true,
     "window": true
