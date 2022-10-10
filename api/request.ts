@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig } from 'axios'
 
-import logger from 'lib/logger'
+import logger from '@lib/logger'
 import { ApiError } from './error'
 
 const retrieve = async (

@@ -1,4 +1,5 @@
 import * as R from 'ramda'
+
 import Route from './Route'
 
 // Handle isIndex property of route config:
@@ -8,7 +9,7 @@ const handleIndexRoute = (route: Route) => {
     return
   }
 
-  const indexRoute = route.childRoutes.find(R.prop('isIndex'))
+  const indexRoute = route.childRoutes.find(R.propOr(false, 'isIndex'))
 
   if (indexRoute) {
     const first = {

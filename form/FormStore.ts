@@ -1,6 +1,6 @@
 import { observable, action } from 'mobx'
 
-import logger from 'lib/logger'
+import logger from '@lib/logger'
 
 class FormStore {
   @observable dirty: boolean = false

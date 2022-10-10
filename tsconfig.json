@@ -12,6 +12,9 @@
       "dom",
       "dom.iterable",
       "esnext"
-    ]
-  }
+    ],
+    "paths": {
+      "@lib/*": ["./*"]
+    }
+  },
 }
