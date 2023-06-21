@@ -26,6 +26,7 @@
     "max-len": ["error", 120],
     "indent": ["error", 2],
     "eol-last": "error",
+    "func-style": ["error", "expression"],
     "prefer-const": "error",
     "no-console": "error",
     "no-else-return": "warn",
